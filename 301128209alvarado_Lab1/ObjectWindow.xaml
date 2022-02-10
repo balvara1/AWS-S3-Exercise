@@ -1,0 +1,30 @@
+﻿<Window x:Class="_301128209alvarado_Lab1.ObjectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_301128209alvarado_Lab1"
+        mc:Ignorable="d"
+        Title="Upload Object to S3 Bucket Window" Height="450" Width="800">
+    <Grid>
+
+        <Label Content="Bucket" HorizontalAlignment="Left" Margin="37,38,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label Content="Object" HorizontalAlignment="Left" Margin="38,83,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <ComboBox x:Name="comboBox_Bucket" HorizontalAlignment="Left" Margin="140,40,0,0" VerticalAlignment="Top" Width="422" SelectionChanged="comboBox_Bucket_SelectionChanged" Grid.Row="1"/>
+        <TextBox x:Name="textbox_ObjectName" HorizontalAlignment="Left" Margin="140,87,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="422" Height="22" Grid.Row="1"/>
+
+        <DataGrid x:Name="dataGrid_objectList" Margin="0,154,201,103" AutoGenerateColumns="False" GridLinesVisibility="None">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Object Name" Binding="{Binding Key}" Width="400" IsReadOnly="True" />
+                <DataGridTextColumn Header="Size" Binding="{Binding Size}" Width="2*" IsReadOnly="True" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btn_Browse" Content="Browse" HorizontalAlignment="Left" Margin="627,40,0,0"
+                Foreground="AliceBlue" Background="CornflowerBlue" VerticalAlignment="Top" Height="22" Width="108" Click="btn_Browse_Click"/>
+        
+        <Button x:Name="btn_MainWindow" Content="Back to Main Window" HorizontalAlignment="Left" Margin="627,189,0,0"
+                Foreground="AliceBlue" Background="CornflowerBlue" VerticalAlignment="Top" Height="54" Width="108" Click="btn_MainWindow_Click"/>
+        <Button x:Name="btn_Upload" Content="Upload" HorizontalAlignment="Left" Margin="627,86,0,0"
+                Foreground="AliceBlue" Background="CornflowerBlue" VerticalAlignment="Top" Height="23" Width="108" Click="btn_Upload_Click"/>
+    </Grid>
+</Window>
